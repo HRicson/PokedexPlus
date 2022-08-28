@@ -13,6 +13,9 @@ export class PokeListComponent implements OnInit {
   private setAllPokemons: PokemonsResponse[];
   public getAllPokemons: PokemonsResponse[];
 
+  public apiHasError: boolean = false;
+  public isLoading: boolean = true;
+
   constructor(private pokeApiService: PokeApiService) { }
 
   ngOnInit(): void {
@@ -20,7 +23,12 @@ export class PokeListComponent implements OnInit {
       .subscribe(response => {
         this.setAllPokemons = response.results
         this.getAllPokemons = this.setAllPokemons
-      })
+
+        this.isLoading = false;
+      },
+        error => {
+          this.apiHasError = true;
+        })
   }
 
   public getSearch(value: string) {

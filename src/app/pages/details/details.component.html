@@ -1,1 +1,39 @@
-<p>details works!</p>
+<main>
+  <ng-template [ngIf]="!isLoading">
+    <section class="fadeInDown pokemon__names">
+      <h1>{{ pokedex[0].name }}</h1>
+      <h2>{{ pokedex[1].names[0].name }}</h2>
+    </section>
+
+    <section class="pokemon__status" *ngIf="pokedex">
+      <img
+        [src]="pokedex[0].sprites.other.dream_world.front_default"
+        [alt]="pokedex[0].name"
+        class="fadeInRight"
+      />
+      <article class="pokemon__status__statistics">
+        <section class="pulse">
+          <h3>Estatísticas</h3>
+
+          <ol>
+            <li *ngFor="let value of pokedex[0].stats">
+              {{ value.stat.name }}
+
+              <strong>
+                {{ value.base_stat }}
+              </strong>
+            </li>
+          </ol>
+
+          <a [routerLink]="['']" class="btn btn__secondary">
+            Voltar
+          </a>
+        </section>
+      </article>
+    </section>
+  </ng-template>
+
+  <app-loading *ngIf="isLoading"></app-loading>
+
+  <app-error *ngIf="apiHasError"></app-error>
+</main>

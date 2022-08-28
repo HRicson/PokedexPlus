@@ -28,4 +28,8 @@
       </section>
     </a>
   </ng-template>
+
+  <app-loading *ngIf="isLoading"></app-loading>
 </section>
+
+<app-error *ngIf="apiHasError"></app-error>
