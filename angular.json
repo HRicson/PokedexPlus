@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PokedexPlus"
+    }
+  },
+  "defaultProject": "PokedexPlus",
+  "cli": {
+    "analytics": false
+  }
 }
