@@ -32,18 +32,6 @@ export interface Pokedex {
   weight: number;
 }
 
-// export interface PokedexDetails {
-//   effect_changes:      EffectChange[];
-//   effect_entries:      PokedexEffectEntry[];
-//   flavor_text_entries: FlavorTextEntry[];
-//   generation:          Generation;
-//   id:                  number;
-//   is_main_series:      boolean;
-//   name:                string;
-//   names:               Name[];
-//   pokemon:             Pokemon[];
-// }
-
 export interface Ability {
   ability: Species;
   is_hidden: boolean;
@@ -201,51 +189,51 @@ export interface Type {
 //new
 
 export interface Pokedex {
-    effect_changes:      EffectChange[];
-    effect_entries:      PokedexEffectEntry[];
-    flavor_text_entries: FlavorTextEntry[];
-    generation:          Generation;
-    id:                  number;
-    is_main_series:      boolean;
-    name:                string;
-    names:               Name[];
-    pokemon:             Pokemon[];
+  effect_changes: EffectChange[];
+  effect_entries: PokedexEffectEntry[];
+  flavor_text_entries: FlavorTextEntry[];
+  generation: Generation;
+  id: number;
+  is_main_series: boolean;
+  name: string;
+  names: Name[];
+  pokemon: Pokemon[];
 }
 
 export interface EffectChange {
-    effect_entries: EffectChangeEffectEntry[];
-    version_group:  Generation;
+  effect_entries: EffectChangeEffectEntry[];
+  version_group: Generation;
 }
 
 export interface EffectChangeEffectEntry {
-    effect:   string;
-    language: Generation;
+  effect: string;
+  language: Generation;
 }
 
 export interface Generation {
-    name: string;
-    url:  string;
+  name: string;
+  url: string;
 }
 
 export interface PokedexEffectEntry {
-    effect:       string;
-    language:     Generation;
-    short_effect: string;
+  effect: string;
+  language: Generation;
+  short_effect: string;
 }
 
 export interface FlavorTextEntry {
-    flavor_text:   string;
-    language:      Generation;
-    version_group: Generation;
+  flavor_text: string;
+  language: Generation;
+  version_group: Generation;
 }
 
 export interface Name {
-    language: Generation;
-    name:     string;
+  language: Generation;
+  name: string;
 }
 
 export interface Pokemon {
-    is_hidden: boolean;
-    pokemon:   Generation;
-    slot:      number;
+  is_hidden: boolean;
+  pokemon: Generation;
+  slot: number;
 }

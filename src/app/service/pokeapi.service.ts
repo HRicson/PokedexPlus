@@ -20,8 +20,6 @@ export class PokeApiService {
         tap(pokedexResponse => pokedexResponse),
         tap(pokedexResponse => {
 
-          console.log(pokedexResponse)
-
           pokedexResponse.results
             .map((pokemonsResponse: PokemonsResponse) => {
               this
